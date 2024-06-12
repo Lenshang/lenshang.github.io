@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            max-width: 1300px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .container--offset {
+            margin-left: 0;
+        }
+
+        body {
+            background-color: black
+        }
+
+        .temp {
+            position: absolute;
+            z-index: -1;
+            color: rgb(255, 255, 255);
+        }
+
+        a {
+            color: rgb(255, 255, 255);
+            text-decoration: none
+        }
+
+        a:hover {
+            color: rgb(253, 0, 0);
+            /*鼠标经过链接时颜色*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="scene">
+            <div data-depth="0.6" style="margin-left:720px">
+                <img src="image/ling.png" height="800px">
+            </div>
+            <div data-depth="0.6">
+                <img src="image/luo.png" height="800px">
+                <div style="width:300px"></div>
+            </div>
+            <div data-depth="0.4" style="margin-left:350px">
+                <img src="image/xing.png" height="800px">
+            </div>
+            <div data-depth="0.2" style="margin-top:600px;margin-left:480px">
+                <img src="image/logo2.png" height="200px">
+            </div>
+        </div>
+        <div style="font-size:30px;text-align:center;color:azure">coming soon......
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/parallax.js"></script>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
+        var list = ["猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹","猹"];
+        setInterval(function () {
+            var r = Math.ceil(Math.random() * list.length),
+                food = list[r - 1];
+            $("#what").html(food);
+            var rTop = Math.ceil(Math.random() * $(document).height()),
+                rLeft = Math.ceil(Math.random() * ($(document).width() - 50)),
+                rSize = Math.ceil(Math.random() * (37 - 14) + 14);
+            $("<span class='temp'></span>").html(food).hide().css({
+                "top": rTop,
+                "left": rLeft,
+                "color": "rgba(0,0,0,." + Math.random() + ")",
+                "fontSize": rSize + "px"
+            }).appendTo("body").fadeIn("slow", function () {
+                $(this).fadeOut("slow", function () {
+                    $(this).remove();
+                });
+            });
+        }, 50);
+    </script>
+</body>
+
+</html>

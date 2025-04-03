@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手动模式工程转换器</title>
+    <script>
+        function downloadJSON(data, filename) {
+            // 将JSON数据转换为字符串
+            const jsonData = JSON.stringify(data);
+            const blob = new Blob([jsonData], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = filename || "download.svp";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        function get_all_points(obj) {
+            let r = [];
+            for (let item of obj) {
+                if (item.type == "point") {
+                    r.push(item);
+                }
+            }
+            return r;
+        }
+        function points_to_curve(obj, notes) {
+            if (obj.length == 0) {
+                return [];
+            }
+            let info = { "pos": obj[0]["pos"], "pitch": obj[0]["pitch"], "id": obj[0]["id"], "type": "curve", "points": [] }
+            let result = [];
+            let base_index = 0;
+            let note_index = 0;
+            let note_start = notes[note_index]["onset"];
+            let note_end = note_start + notes[note_index]["duration"];
+            for (let index in obj) {
+                let last_item = obj[base_index];
+                let curr_item = obj[index];
+                if (curr_item["pos"] > note_end) {
+                    note_index++;
+                    note_start = notes[note_index]["onset"];
+                    note_end = note_start + notes[note_index]["duration"];
+                    result.push(info);
+                    base_index = index;
+                    info = { "pos": curr_item["pos"], "pitch": curr_item["pitch"], "id": curr_item["id"], "type": "curve", "points": [] }
+                }
+                info["points"].push(Number((curr_item["pos"] - last_item["pos"]).toFixed(5)));
+                info["points"].push(Number((curr_item["pitch"] - last_item["pitch"]).toFixed(5)));
+            }
+            result.push(info);
+            return result;
+        }
+        function main(obj) {
+            debugger
+            for (let library of obj.library) {
+                let all_points = get_all_points(library.pitchControls);
+                let all_notes = library.notes;
+                let gen_curve = points_to_curve(all_points, all_notes);
+                library.pitchControls = gen_curve;
+            }
+            console.log(obj);
+            downloadJSON(obj, "output.svp");
+        }
+        function handleFileSelect(evt) {
+            var files = evt.target.files; // 文件对象
+            if (files) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var contents = e.target.result;
+                    // 将JSON字符串转换为JavaScript对象
+                    var json = JSON.parse(contents);
+                    main(json); // 在控制台打印出JSON内容
+                    // 你可以在这里继续处理JSON数据
+                };
+                reader.readAsText(files[0]);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Synthesizer V Pro 2 工程手动模式转换器</h1>
+        <b>说明：</b>
+        <div>
+            请先创建控制点，可以从编辑器[菜单-修改-将音高转换为控制点] 自动创建控制点（转换灵敏度请拉满）</br>
+            此页面将自动将工程中的控制点转换为手动音高线，以此实现类似1代中的手动功能。
+        </div>
+        <div style="height: 10px;"></div>
+        <input type="file" id="fileInput" style="display: none;" accept=".svp" onchange="handleFileSelect(event)">
+        <button onclick="document.getElementById('fileInput').click()">选择svp文件</button>
+    </div>
+</body>
+
+</html>

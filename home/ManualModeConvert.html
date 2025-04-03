@@ -51,7 +51,7 @@
                     note_start = notes[note_index]["onset"];
                     note_end = note_start + notes[note_index]["duration"];
                     // if (info["points"].length > 60) {
-                    if ((note_start - (notes[note_index - 1]["onset"] + notes[note_index - 1]["duration"])) > 10000000) {
+                    if (((note_start - (notes[note_index - 1]["onset"] + notes[note_index - 1]["duration"])) > 10000000) || notes[note_index]["lyrics"] == "br") {
                         if (note_index >= notes.length) {
                             break;
                         }

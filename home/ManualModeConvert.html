@@ -32,31 +32,48 @@
             if (obj.length == 0) {
                 return [];
             }
-            let info = { "pos": obj[0]["pos"], "pitch": obj[0]["pitch"], "id": obj[0]["id"], "type": "curve", "points": [] }
+            let info = {
+                "pos": obj[0]["pos"], "pitch": obj[0]["pitch"], "id": obj[0]["id"], "type": "curve", "points": [
+                    0, 0.0
+                ]
+            }
             let result = [];
             let base_index = 0;
             let note_index = 0;
             let note_start = notes[note_index]["onset"];
             let note_end = note_start + notes[note_index]["duration"];
+            let id_index = 1;
             for (let index in obj) {
                 let last_item = obj[base_index];
                 let curr_item = obj[index];
-                if (curr_item["pos"] > note_end) {
+                if (curr_item["pos"] >= note_end) {
                     note_index++;
-                    note_start = notes[note_index]["onset"];
-                    note_end = note_start + notes[note_index]["duration"];
-                    result.push(info);
-                    base_index = index;
-                    info = { "pos": curr_item["pos"], "pitch": curr_item["pitch"], "id": curr_item["id"], "type": "curve", "points": [] }
+                    if (info["points"].length > 200) {
+                        if (note_index >= notes.length) {
+                            break;
+                        }
+                        note_start = notes[note_index]["onset"];
+                        note_end = note_start + notes[note_index]["duration"];
+                        result.push(info);
+                        base_index = index;
+                        id_index++;
+                        info = {
+                            "pos": obj[base_index]["pos"],
+                            "pitch": obj[base_index]["pitch"],
+                            "id": obj[base_index]["id"],
+                            "type": "curve",
+                            "points": [0, 0.0],
+                        }
+                    }
+
                 }
-                info["points"].push(Number((curr_item["pos"] - last_item["pos"]).toFixed(5)));
-                info["points"].push(Number((curr_item["pitch"] - last_item["pitch"]).toFixed(5)));
+                info["points"].push(Number((curr_item["pos"] - last_item["pos"])));
+                info["points"].push(Number((curr_item["pitch"] - last_item["pitch"]).toFixed(7)));
             }
             result.push(info);
             return result;
         }
         function main(obj) {
-            debugger
             for (let library of obj.library) {
                 let all_points = get_all_points(library.pitchControls);
                 let all_notes = library.notes;

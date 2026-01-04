@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontour - 专业的音频文件预览工具，支持 WAV、MP3、OGG 及 KONTAKT 乐器格式（NKI、NKM、NKSN）">
+    <meta name="keywords" content="音频预览,KONTAKT,NKI,音频工具,Kontour">
+    <title>Kontour - 专业音频文件预览工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">Kontour</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#features" data-i18n="nav.features">功能特性</a>
+                <a href="#preview" data-i18n="nav.preview">软件预览</a>
+                <a href="#download" data-i18n="nav.download">下载</a>
+            </div>
+            <div class="language-selector">
+                <button class="lang-btn" id="langBtn">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text" id="currentLang">简体中文</span>
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <a href="#" class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</a>
+                    <a href="#" class="lang-option" data-lang="zh-TW">🇹🇼 繁體中文</a>
+                    <a href="#" class="lang-option" data-lang="en">🇺🇸 English</a>
+                    <a href="#" class="lang-option" data-lang="ja">🇯🇵 日本語</a>
+                    <a href="#" class="lang-option" data-lang="ko">🇰🇷 한국어</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主横幅 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Kontour</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">专业的音频文件预览工具</p>
+                <p class="hero-description" data-i18n="hero.description">
+                    支持 WAV、MP3、OGG 等常见音频格式<br>
+                    以及 KONTAKT 乐器格式（NKI、NKM、NKSN）
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary" data-i18n="hero.download">立即下载</a>
+                    <a href="#features" class="btn btn-secondary" data-i18n="hero.learnMore">了解更多</a>
+                </div>
+            </div>
+            <div class="hero-screenshot">
+                <img src="pic1.png" alt="Kontour 软件界面" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features.title">功能特性</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3 data-i18n="features.multiFormat.title">多格式支持</h3>
+                    <p data-i18n="features.multiFormat.desc">支持 WAV、MP3、OGG 等主流音频格式的快速预览</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎹</div>
+                    <h3 data-i18n="features.kontakt.title">KONTAKT 乐器</h3>
+                    <p data-i18n="features.kontakt.desc">原生支持 NKI、NKM、NKSN 格式的 KONTAKT 乐器文件</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 data-i18n="features.fast.title">快速轻量</h3>
+                    <p data-i18n="features.fast.desc">启动迅速，资源占用少，专注于音频预览功能</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 data-i18n="features.ui.title">简洁界面</h3>
+                    <p data-i18n="features.ui.desc">清爽的界面设计，操作简单直观，易于上手</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📂</div>
+                    <h3 data-i18n="features.batch.title">批量处理</h3>
+                    <p data-i18n="features.batch.desc">支持批量浏览和管理音频文件，提升工作效率</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 data-i18n="features.details.title">详细信息</h3>
+                    <p data-i18n="features.details.desc">显示音频文件的详细元数据和技术参数</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 软件预览 -->
+    <section id="preview" class="preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="preview.title">软件预览</h2>
+            <div class="preview-content">
+                <img src="pic1.png" alt="Kontour 软件截图" class="preview-image">
+                <div class="preview-description">
+                    <h3 data-i18n="preview.subtitle">直观的用户界面</h3>
+                    <p data-i18n="preview.description">Kontour 提供清晰直观的用户界面，让您可以轻松浏览和预览各种音频文件。无论是日常音频格式还是专业的 KONTAKT
+                        乐器，都能获得流畅的使用体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持格式 -->
+    <section class="formats">
+        <div class="container">
+            <h2 class="section-title" data-i18n="formats.title">支持的文件格式</h2>
+            <div class="formats-grid">
+                <div class="format-group">
+                    <h3 data-i18n="formats.audio.title">常见音频格式</h3>
+                    <div class="format-tags">
+                        <span class="format-tag">WAV</span>
+                        <span class="format-tag">MP3</span>
+                        <span class="format-tag">OGG</span>
+                    </div>
+                </div>
+                <div class="format-group">
+                    <h3 data-i18n="formats.kontakt.title">KONTAKT 乐器格式</h3>
+                    <div class="format-tags">
+                        <span class="format-tag kontakt">NKI</span>
+                        <span class="format-tag kontakt">NKM</span>
+                        <span class="format-tag kontakt">NKSN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title" data-i18n="download.title">立即下载</h2>
+            <div class="download-content">
+                <p class="download-description" data-i18n="download.description">选择适合您操作系统的版本开始使用 Kontour</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn">
+                        <span class="platform-icon">🪟</span>
+                        <div class="platform-info">
+                            <span class="platform-name">Windows</span>
+                            <span class="platform-detail">Windows 10/11</span>
+                        </div>
+                    </a>
+                    <a href="#" class="download-btn">
+                        <span class="platform-icon">🍎</span>
+                        <div class="platform-info">
+                            <span class="platform-name">macOS</span>
+                            <span class="platform-detail">macOS 10.15+</span>
+                        </div>
+                    </a>
+                    <a href="#" class="download-btn">
+                        <span class="platform-icon">🐧</span>
+                        <div class="platform-info">
+                            <span class="platform-name">Linux</span>
+                            <span class="platform-detail">Ubuntu 20.04+</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kontour</h3>
+                    <p data-i18n="footer.description">专业的音频文件预览工具</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.quickLinks">快速链接</h4>
+                    <ul>
+                        <li><a href="#features" data-i18n="nav.features">功能特性</a></li>
+                        <li><a href="#preview" data-i18n="nav.preview">软件预览</a></li>
+                        <li><a href="#download" data-i18n="nav.download">下载</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-i18n="footer.support">支持</h4>
+                    <ul>
+                        <li><a href="#" data-i18n="footer.docs">使用文档</a></li>
+                        <li><a href="#" data-i18n="footer.faq">常见问题</a></li>
+                        <li><a href="#" data-i18n="footer.feedback">反馈建议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kontour. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

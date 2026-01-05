@@ -6,25 +6,26 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary-color: #8b5cf6;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
-    --bg-white: #ffffff;
-    --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --primary-color: #818cf8;
+    --primary-dark: #6366f1;
+    --secondary-color: #a78bfa;
+    --text-dark: #e5e7eb;
+    --text-light: #9ca3af;
+    --bg-light: #1f2937;
+    --bg-white: #111827;
+    --bg-darker: #0f172a;
+    --border-color: #374151;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--bg-white);
+    background-color: var(--bg-darker);
 }
 
 .container {
@@ -37,6 +38,7 @@ body {
 .navbar {
     background-color: var(--bg-white);
     box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -97,7 +99,7 @@ body {
 
 .lang-btn:hover {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--bg-darker);
     border-color: var(--primary-color);
 }
 
@@ -157,12 +159,12 @@ body {
 
 .lang-option.active {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--bg-darker);
 }
 
 /* 主横幅 */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
     color: white;
     padding: 80px 0;
 }
@@ -234,8 +236,8 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--bg-white);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--bg-darker);
 }
 
 .btn-primary:hover {
@@ -266,7 +268,7 @@ body {
 /* 功能特性 */
 .features {
     padding: 80px 0;
-    background-color: var(--bg-light);
+    background-color: var(--bg-darker);
 }
 
 .features-grid {
@@ -308,7 +310,7 @@ body {
 /* 软件预览 */
 .preview {
     padding: 80px 0;
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
 }
 
 .preview-content {
@@ -349,7 +351,7 @@ body {
 /* 支持格式 */
 .formats {
     padding: 80px 0;
-    background-color: var(--bg-light);
+    background-color: var(--bg-darker);
 }
 
 .formats-grid {
@@ -404,7 +406,7 @@ body {
 /* 下载区域 */
 .download {
     padding: 80px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
     color: white;
 }
 
@@ -433,7 +435,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    background-color: var(--bg-white);
+    background-color: var(--bg-light);
     color: var(--text-dark);
     padding: 1.5rem 2.5rem;
     border-radius: 12px;
@@ -441,6 +443,7 @@ body {
     transition: all 0.3s ease;
     box-shadow: var(--shadow-lg);
     min-width: 250px;
+    border: 1px solid var(--border-color);
 }
 
 .download-btn:hover {
@@ -471,9 +474,10 @@ body {
 
 /* 页脚 */
 .footer {
-    background-color: var(--text-dark);
+    background-color: var(--bg-white);
     color: white;
     padding: 60px 0 20px;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {

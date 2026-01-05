@@ -56,7 +56,8 @@ const translations = {
         },
         download: {
             title: '立即下载',
-            description: '选择适合您操作系统的版本开始使用 Kontour'
+            description: '选择适合您操作系统的版本开始使用 Kontour',
+            notSupported: '暂不支持该操作系统'
         },
         footer: {
             description: '专业的音频文件预览工具',
@@ -123,7 +124,8 @@ const translations = {
         },
         download: {
             title: '立即下載',
-            description: '選擇適合您作業系統的版本開始使用 Kontour'
+            description: '選擇適合您作業系統的版本開始使用 Kontour',
+            notSupported: '暫不支持該作業系統'
         },
         footer: {
             description: '專業的音訊檔案預覽工具',
@@ -190,7 +192,8 @@ const translations = {
         },
         download: {
             title: 'Download Now',
-            description: 'Choose the version for your operating system to start using Kontour'
+            description: 'Choose the version for your operating system to start using Kontour',
+            notSupported: 'Not supported on this operating system'
         },
         footer: {
             description: 'Professional Audio File Preview Tool',
@@ -257,7 +260,8 @@ const translations = {
         },
         download: {
             title: '今すぐダウンロード',
-            description: 'お使いのOSに適したバージョンを選択してKontourを始めましょう'
+            description: 'お使いのOSに適したバージョンを選択してKontourを始めましょう',
+            notSupported: 'このオペレーティングシステムではサポートされていません'
         },
         footer: {
             description: 'プロフェッショナルなオーディオファイルプレビューツール',
@@ -324,7 +328,8 @@ const translations = {
         },
         download: {
             title: '지금 다운로드',
-            description: '운영 체제에 맞는 버전을 선택하여 Kontour 사용 시작'
+            description: '운영 체제에 맞는 버전을 선택하여 Kontour 사용 시작',
+            notSupported: '이 운영 체제에서는 지원되지 않습니다'
         },
         footer: {
             description: '전문 오디오 파일 미리보기 도구',

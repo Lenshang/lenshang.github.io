@@ -184,9 +184,14 @@ document.querySelectorAll('.download-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
         const platform = btn.querySelector('.platform-name').textContent;
-
-        // 这里可以添加实际的下载逻辑
-        alert(`感谢下载 Kontour for ${platform}！\n\n实际使用时，请在这里添加真实的下载链接。`);
+        if (platform === 'Windows') {
+            window.open('https://github.com/Lenshang/Kontour/releases', '_blank');
+        } else if (platform === 'macOS') {
+            // 提示暂不支持，支持多语言提示
+            alert(translations[currentLanguage].download.notSupported);
+        } else if (platform === 'Linux') {
+            alert(translations[currentLanguage].download.notSupported);
+        }
     });
 });
 
@@ -230,7 +235,7 @@ function createMobileMenu() {
             navLinks.style.position = 'absolute';
             navLinks.style.top = '60px';
             navLinks.style.right = '20px';
-            navLinks.style.backgroundColor = 'white';
+            navLinks.style.backgroundColor = '#111827';
             navLinks.style.padding = '1rem';
             navLinks.style.borderRadius = '8px';
             navLinks.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';

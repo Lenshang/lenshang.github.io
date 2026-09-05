@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>异世界小满物语 ～社畜少女与梗之力～</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <!-- 标题画面 -->
+  <div id="screen-title" class="screen"></div>
+
+  <!-- 主游戏画面（对话/剧情） -->
+  <div id="screen-game" class="screen hidden">
+    <div id="stage"><div id="stage-fx"></div></div>
+    <div id="hud"></div>
+    <div id="dialog-wrap" class="hidden">
+      <div id="title-card" class="hidden"></div>
+      <div id="dialog">
+        <div id="dialog-name" class="hidden"></div>
+        <div id="dialog-text"></div>
+        <div id="dialog-next">▼</div>
+      </div>
+      <div id="choices" class="hidden"></div>
+    </div>
+    <button id="btn-menu" title="菜单(Esc)">☰ 菜单</button>
+  </div>
+
+  <!-- 战斗画面 -->
+  <div id="screen-battle" class="screen hidden">
+    <div id="battle-bg"></div>
+    <div id="battle-top"></div>
+    <div id="battle-enemies"></div>
+    <div id="battle-log"></div>
+    <div id="battle-party"></div>
+    <div id="battle-cmd"></div>
+    <div id="battle-skill-list" class="hidden"></div>
+    <div id="battle-item-list" class="hidden"></div>
+  </div>
+
+  <!-- 行程图 -->
+  <div id="screen-world" class="screen hidden"></div>
+
+  <!-- 自由探索地图 -->
+  <div id="screen-map" class="screen hidden">
+    <div id="map-hudbar">
+      <span id="map-locname">📍</span>
+      <span id="map-stats" class="dim"></span>
+      <span style="flex:1"></span>
+      <button class="mini-btn" id="map-world">🗺️ 行程图</button>
+      <button class="mini-btn" id="map-menu">☰ 菜单</button>
+    </div>
+    <div id="map-wrap">
+      <canvas id="map-canvas"></canvas>
+      <div id="map-flash"></div>
+    </div>
+    <div id="map-pad">
+      <div class="pad-grid">
+        <span></span>
+        <button class="pad-btn" data-dir="up">▲</button>
+        <span></span>
+        <button class="pad-btn" data-dir="left">◀</button>
+        <button class="pad-btn" data-dir="down">▼</button>
+        <button class="pad-btn" data-dir="right">▶</button>
+      </div>
+      <div class="pad-hint dim">方向键 / WASD 移动 · E / 空格 互动</div>
+      <button id="map-act">💬 互动 (E)</button>
+    </div>
+  </div>
+
+  <!-- 主菜单 -->
+  <div id="screen-menu" class="screen hidden"></div>
+
+  <!-- 商店 -->
+  <div id="screen-shop" class="screen hidden"></div>
+
+  <!-- 通用覆盖层（小游戏等） -->
+  <div id="overlay" class="hidden"></div>
+
+  <!-- 提示队列 -->
+  <div id="toasts"></div>
+</div>
+
+<script src="js/engine.js"></script>
+<script src="js/data.js"></script>
+<script src="js/memes.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/world.js"></script>
+<script src="js/map.js"></script>
+<script src="js/maps_data.js"></script>
+<script src="js/story/ch0.js"></script>
+<script src="js/story/ch1.js"></script>
+<script src="js/story/ch2.js"></script>
+<script src="js/story/ch3.js"></script>
+<script src="js/story/ch4.js"></script>
+<script src="js/story/ch5.js"></script>
+<script src="js/story/ch6.js"></script>
+<script src="js/story/ch7.js"></script>
+<script src="js/story/ch8.js"></script>
+<script src="js/story/side.js"></script>
+<script src="js/story/post.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

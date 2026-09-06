@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>回到1985 · 像素冒险</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%231a1c2c'/><text x='2' y='12' font-size='10' fill='%23ffcd75'>85</text></svg>" />
+  <script type="module" crossorigin src="./assets/index-BaFMtVlJ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CTxSWWCC.css">
+</head>
+<body>
+  <div id="app">
+    <div id="frame">
+      <div id="game-root"></div>
+
+      <div id="ui-root">
+        <!-- 资源加载条 -->
+        <div id="loading">
+          <div class="load-box">
+            <div class="load-name">回到1985</div>
+            <div class="load-bar"><i id="load-fill"></i></div>
+            <div id="load-pct">正在加载资源…</div>
+          </div>
+        </div>
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+          <div id="hud-left">
+            <div id="hud-map">老街</div>
+            <div id="hud-chapter">第一章</div>
+          </div>
+          <div id="hud-right">
+            <div id="hud-gold">¥ 0</div>
+            <div id="hud-hint"></div>
+          </div>
+        </div>
+
+        <!-- 对话框 -->
+        <div id="dialogue" class="hidden">
+          <div id="dlg-portrait" class="hidden"><canvas id="dlg-portrait-canvas" width="64" height="64"></canvas></div>
+          <div id="dlg-main">
+            <div id="dlg-name" class="hidden">？？？</div>
+            <div id="dlg-text"></div>
+            <div id="dlg-next" class="hidden">▼</div>
+          </div>
+        </div>
+
+        <!-- 选项 -->
+        <div id="choices" class="hidden"></div>
+
+        <!-- 章节横幅 -->
+        <div id="banner" class="hidden">
+          <div id="banner-title"></div>
+          <div id="banner-sub"></div>
+        </div>
+
+        <!-- 提示气泡 -->
+        <div id="toast" class="hidden"></div>
+
+        <!-- 标题屏 -->
+        <div id="title" class="hidden">
+          <div id="title-stars"></div>
+          <div id="title-box">
+            <div id="title-badge">TALE OF 1985</div>
+            <h1 id="title-name">回到1985</h1>
+            <div id="title-sub">—— 一场关于时代与我们的冒险 ——</div>
+            <div id="title-menu">
+              <button class="btn" id="btn-new">新的故事</button>
+              <button class="btn" id="btn-continue" disabled>继续旅程</button>
+              <button class="btn" id="btn-auto">▶ 自动观剧模式</button>
+              <button class="btn" id="btn-help">操作说明</button>
+              <button class="btn" id="btn-credits">制作致谢</button>
+            </div>
+            <div id="title-tip">建议使用 Chrome / Edge 浏览器 · 全程鼠标或键盘可玩</div>
+          </div>
+        </div>
+
+        <!-- 帮助 / 致谢弹窗 -->
+        <div id="modal" class="hidden">
+          <div id="modal-box">
+            <div id="modal-title"></div>
+            <div id="modal-body"></div>
+            <button class="btn" id="modal-close">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
